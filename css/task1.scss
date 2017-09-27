@@ -1,9 +1,10 @@
 $btnFSise:15px;
 $btnFbold:bold;
+$headFont:#000;
 .head1{
 	font-size: 20px;
 	font-weight: bold;
-	color: #eee;
+	color: $headFont;
 	text-align: center;
 	line-height: 20px;;
 }

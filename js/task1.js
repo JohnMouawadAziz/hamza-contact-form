@@ -3,10 +3,10 @@ myapp.controller('productController', function($scope){
 
 	$scope.listProducts=[
 
-	{id:'m1' , name:'john' , price:'1000' , quantety:'100' },
-	{id:'m2' , name:'john' , price:'1000' , quantety:'100' },
-	{id:'m3' , name:'john' , price:'1000' , quantety:'100' },
-	{id:'m4' , name:'john' , price:'1000' , quantety:'100' }
+	{id:'m1' , name:'john' , email:'1000' , quantety:'100' },
+	{id:'m2' , name:'bola' , email:'1000' , quantety:'100' },
+	{id:'m3' , name:'shery' , email:'1000' , quantety:'100' },
+	{id:'m4' , name:'monica' , email:'1000' , quantety:'100' }
 
 	];
 
@@ -15,13 +15,13 @@ myapp.controller('productController', function($scope){
 
 		$scope.listProducts.push({
 
-			id:$scope.id , name:$scope.name , price:$scope.price , quantety:$scope.quantety
+			id:$scope.id , name:$scope.name , email:$scope.price , quantety:$scope.quantety
 
 		});
 
 		$scope.id='';
 		$scope.name='';
-		$scope.price='';
+		$scope.email='';
 		$scope.quantety='';
 	};
 
@@ -29,7 +29,7 @@ myapp.controller('productController', function($scope){
 	$scope.edit=function (){
 		var index=getSelectedIndex($scope.id);
 		$scope.listProducts[index].name = $scope.name;
-		$scope.listProducts[index].price = $scope.price;
+		$scope.listProducts[index].email = $scope.email;
 		$scope.listProducts[index].quantety = $scope.quantety;
 
 	};

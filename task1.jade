@@ -1,0 +1,48 @@
+doctype html
+html(ng-app='myapp')
+  head
+    title hamza task
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js')
+    link(rel='stylesheet', type='text/css', href='css/task1.min.css')
+  body(ng-controller='productController')
+    table.tab1(cellspacing='2', border='1')
+      tr
+        th ID
+        th Name
+        th email
+        th phone
+        th option
+      tr(ng-repeat='product in listProducts')
+        td {{product.id}}
+        td {{product.name}}
+        td {{product.price}}
+        td {{product.quantety}}
+        td
+          a(href='#', ng-click='del(product.id)') Delete
+          a(href='#', ng-click='selectEdit(product.id)') Edit
+    h3.head1 Information
+    table.tab1(cellpadding='2', cellspacing='2', border='1')
+      tr
+        td ID
+        td
+          input.INPUT(type='text', ng-model='id')
+      tr
+        td Name
+        td
+          input.INPUT(type='text', ng-model='name')
+      tr
+        td Price
+        td
+          input.INPUT(type='text', ng-model='price')
+      tr
+        td Quantity
+        td
+          input.INPUT(type='text', ng-model='quantety')
+      tr
+        td  
+        td
+          input.buttonadd(type='button', value='Add', ng-click='add()')
+          input(type='button', value='Save', ng-click='edit()')
+    script(type='text/javascript', src='js/task1.js')
