@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<title>hamza task</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/task1.min.css">
+
+</head>
+<body ng-controller="productController">
+
+	<table cellspacing="2" cellspacing="2" border="1" class="tab1">
+
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>email</th>
+			<th>phone</th>
+			<th>option</th>
+		</tr>
+
+		<tr ng-repeat="product in listProducts">
+			<td>{{product.id}}</td>
+			<td>{{product.name}}</td>
+			<td>{{product.price}}</td>
+			<td>{{product.quantety}}</td>
+			<td>
+
+				<a href="#" ng-click="del(product.id)">Delete</a>
+				<a href="#" ng-click="selectEdit(product.id)">Edit</a>
+			</td>
+		</tr>
+	</table>
+
+	<h3 class="head1">Information</h3>
+
+	<table cellpadding="2" cellspacing="2" border="1" class="tab1">
+		<tr>
+			<td>ID</td>
+			<td><input type="text" ng-model="id" class="INPUT"></td>
+		</tr>
+
+
+		<tr>
+			<td>Name</td>
+			<td><input type="text" ng-model="name" class="INPUT"></td>
+		</tr>
+
+
+		<tr>
+			<td>Price</td>
+			<td><input type="text" ng-model="price" class="INPUT"></td>
+		</tr>
+
+
+		<tr>
+			<td>Quantity</td>
+			<td><input type="text" ng-model="quantety" class="INPUT"></td>
+		</tr>
+
+
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+				<input type="button" value="Add" ng-click="add()" class="buttonadd">
+				<input type="button" value="Save" ng-click="edit()" >
+			</td>
+		</tr>
+
+
+
+
+	</table >
+
+
+
+
+	<script type="text/javascript" src="js/task1.js"></script>
+</body>
+</html>
