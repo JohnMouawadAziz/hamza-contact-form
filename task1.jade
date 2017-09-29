@@ -6,43 +6,56 @@ html(ng-app='myapp')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js')
     link(rel='stylesheet', type='text/css', href='css/task1.min.css')
+    link(rel='stylesheet', type='text/css', href='css/bootstrap.css')
   body(ng-controller='productController')
-    table.tab1(cellspacing='2', border='1')
-      tr
-        th ID
-        th Name
-        th email
-        th phone
-        th option
-      tr(ng-repeat='product in listProducts')
-        td {{product.id}}
-        td {{product.name}}
-        td {{product.price}}
-        td {{product.quantety}}
-        td
-          a(href='#', ng-click='del(product.id)') Delete
-          a(href='#', ng-click='selectEdit(product.id)') Edit
-    h3.head1 Information
-    table.tab1(cellpadding='2', cellspacing='2', border='1')
-      tr
-        td ID
-        td
-          input.INPUT(type='text', ng-model='id')
-      tr
-        td Name
-        td
-          input.INPUT(type='text', ng-model='name')
-      tr
-        td Price
-        td
-          input.INPUT(type='text', ng-model='price')
-      tr
-        td Quantity
-        td
-          input.INPUT(type='text', ng-model='quantety')
-      tr
-        td  
-        td
-          input.buttonadd(type='button', value='Add', ng-click='add()')
-          input(type='button', value='Save', ng-click='edit()')
+    .container-fluid.bodyType
+      .container
+        h3.head1 Contact Information
+        .row
+          table.tab1.text-center(cellpadding='2', cellspacing='2', border='1')
+            tr
+              td.fontType ID
+              td
+                input.INPUT(type='text', ng-model='id')
+            tr
+              td.fontType Name
+              td
+                input.INPUT(type='text', ng-model='name')
+            tr
+              td.fontType email
+              td
+                input.INPUT(type='text', ng-model='email')
+            tr
+              td.fontType phone
+              td
+                input.INPUT(type='text', ng-model='quantety')
+            tr
+              td.fontType Options
+              td.row
+                .col-md-6
+                  input.buttonadd.btn.btn-danger(type='button', value='Add', ng-click='add()')
+                .col-md-6
+                  input.buttonadd.btn.btn-danger(type='button', value='Save', ng-click='edit()')
+      .container
+        .row.text-center
+          h3.head1 Contact Table
+          table.tab1(cellspacing='2', border='1')
+            tr
+              th.fontType ID
+              th.fontType Name
+              th.fontType Email
+              th.fontType Phone
+              th.fontType option
+            tr(ng-repeat='product in listProducts')
+              td.dataInputStyle {{product.id}}
+              td.dataInputStyle {{product.name}}
+              td.dataInputStyle {{product.email}}
+              td.dataInputStyle {{product.quantety}}
+              td
+                .row
+                  .col-md-6
+                    button.btn-tabl2.btn.btn-danger(ng-click='del(product.id)') Delete
+                  .col-md-6
+                    button.btn-tabl2.btn.btn-info(ng-click='selectEdit(product.id)') Edit
+    script(type='text/javascript', src='js/bootstrap.js')
     script(type='text/javascript', src='js/task1.js')

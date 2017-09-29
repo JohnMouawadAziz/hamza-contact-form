@@ -15,7 +15,7 @@ myapp.controller('productController', function($scope){
 
 		$scope.listProducts.push({
 
-			id:$scope.id , name:$scope.name , email:$scope.price , quantety:$scope.quantety
+			id:$scope.id , name:$scope.name , email:$scope.email , quantety:$scope.quantety
 
 		});
 
@@ -41,7 +41,7 @@ myapp.controller('productController', function($scope){
 		var product = $scope.listProducts[index];
 		$scope.id=product.id;
 		$scope.name=product.name;
-		$scope.price=product.price;
+		$scope.email=product.email;
 		$scope.quantety=product.quantety;
 	};
 

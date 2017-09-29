@@ -6,82 +6,89 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/task1.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
 </head>
 <body ng-controller="productController">
 
+	<div class="container-fluid bodyType">
+
+		<div class="container">
 
 
-<h3 class="head1">Contacts Information</h3>
-
-	<table cellpadding="2" cellspacing="2" border="1" class="tab1">
-		<tr>
-			<td>ID</td>
-			<td><input type="text" ng-model="id" class="INPUT"></td>
-		</tr>
-
-
-		<tr>
-			<td>Name</td>
-			<td><input type="text" ng-model="name" class="INPUT"></td>
-		</tr>
+			<h3 class="head1">Contact Information</h3>
+			<div class="row">
+				<table cellpadding="2" cellspacing="2" border="1" class="tab1 text-center">
+					<tr>
+						<td class="fontType">ID</td>
+						<td><input type="text" ng-model="id" class="INPUT"></td>
+					</tr>  
 
 
-		<tr>
-			<td>email</td>
-			<td><input type="text" ng-model="price" class="INPUT"></td>
-		</tr>
+					<tr>
+						<td class="fontType">Name</td>
+						<td><input type="text" ng-model="name" class="INPUT"></td>
+					</tr>
 
 
-		<tr>
-			<td>phone</td>
-			<td><input type="text" ng-model="quantety" class="INPUT"></td>
-		</tr>
+					<tr>
+						<td class="fontType">email</td>
+						<td><input type="text" ng-model="email" class="INPUT"></td>
+					</tr>
 
 
-		<tr>
-			<td>&nbsp;</td>
-			<td>
-				<input type="button" value="Add" ng-click="add()" class="buttonadd">
-				<input type="button" value="Save" ng-click="edit()" >
-			</td>
-		</tr>
+					<tr>
+						<td class="fontType">phone</td>
+						<td><input type="text" ng-model="quantety" class="INPUT"></td>
+					</tr>
 
 
-
-
-	</table >
-
-
-<h3 class="head1">Contacts table</h3>
-	<table cellspacing="2" cellspacing="2" border="1" class="tab1">
-
-		<tr>
-			<th>ID</th>
-			<th>Name</th>
-			<th>email</th>
-			<th>phone</th>
-			<th>option</th>
-		</tr>
-
-		<tr ng-repeat="product in listProducts">
-			<td>{{product.id}}</td>
-			<td>{{product.name}}</td>
-			<td>{{product.email}}</td>
-			<td>{{product.quantety}}</td>
-			<td>
-
-				<a href="#" ng-click="del(product.id)">Delete</a>
-				<a href="#" ng-click="selectEdit(product.id)">Edit</a>
-			</td>
-		</tr>
-	</table>
+					<tr>
+						<td class="fontType">Options</td>
+						<td class="row">
+							<div class="col-md-6"><input type="button" value="Add" ng-click="add()" class="buttonadd btn btn-danger"></div>
+							<div class="col-md-6"><input type="button" value="Save" ng-click="edit()" class="buttonadd btn btn-danger"></div>
+						</td>
+					</tr>
 
 
 
 
+				</table >
+			</div>
+		</div>
 
+		<div class="container">
+			<div class="row text-center">
+				<h3 class="head1">Contact Table</h3>
+				<table cellspacing="2" cellspacing="2" border="1" class="tab1">
 
+					<tr>
+						<th class="fontType">ID</th>  
+						<th class="fontType">Name</th>
+						<th class="fontType">Email</th>
+						<th class="fontType">Phone</th>
+						<th class="fontType">option</th>
+					</tr>
+
+					<tr ng-repeat="product in listProducts">
+						 <td class="dataInputStyle">{{product.id}}</td> 
+						<td class="dataInputStyle">{{product.name}}</td>
+						<td class="dataInputStyle">{{product.email}}</td>
+						<td class="dataInputStyle">{{product.quantety}}</td>
+						<td>
+						<div class="row">
+							<div class="col-md-6"><button ng-click="del(product.id)" class="btn-tabl2 btn btn-danger">Delete</button></div>
+							<div class="col-md-6"><button ng-click="selectEdit(product.id)" class="btn-tabl2 btn btn-info">Edit</button></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/task1.js"></script>
 </body>
 </html>
