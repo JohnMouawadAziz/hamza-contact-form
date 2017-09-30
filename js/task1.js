@@ -3,12 +3,14 @@ myapp.controller('productController', function($scope){
 
 	$scope.listProducts=[
 
-	{id:'m1' , name:'john' , email:'1000' , quantety:'100' },
-	{id:'m2' , name:'bola' , email:'1000' , quantety:'100' },
-	{id:'m3' , name:'shery' , email:'1000' , quantety:'100' },
-	{id:'m4' , name:'monica' , email:'1000' , quantety:'100' }
+	{id:'m1' , name:'john' , email:'hhh@jjj.com' , quantety:'01234514334' },
+	{id:'m2' , name:'bola' , email:'hhh@jjj.com' , quantety:'01234514334' },
+	{id:'m3' , name:'shery' , email:'hhh@jjj.com' , quantety:'01234514334' },
+	{id:'m4' , name:'monica' , email:'hhh@jjj.com' , quantety:'01234514334' }
 
 	];
+
+///////////////////////Add function///////////////////////
 
 
 	$scope.add=function(){
@@ -25,6 +27,8 @@ myapp.controller('productController', function($scope){
 		$scope.quantety='';
 	};
 
+/////////////////////// save Edit function///////////////////////
+
 
 	$scope.edit=function (){
 		var index=getSelectedIndex($scope.id);
@@ -34,6 +38,7 @@ myapp.controller('productController', function($scope){
 
 	};
 
+///////////////////////Edit function///////////////////////
 
 	$scope.selectEdit=function(id){
 
@@ -47,7 +52,7 @@ myapp.controller('productController', function($scope){
 
 
 
-
+///////////////////////Delete function///////////////////////
 
 	$scope.del = function(id){
 		var result=confirm('are you sure ?!');
@@ -58,6 +63,7 @@ myapp.controller('productController', function($scope){
 		}
 
 	};
+
 
 	function getSelectedIndex(id){
 
